@@ -1,0 +1,54 @@
+# Python related files
+*.pyc
+*.pyo
+*.egg
+*.egg-info
+__pycache__/
+
+# SQLite database
+*.db
+*.sqlite3
+
+# Test, build, and distribution directories
+build/
+docs/_build/
+dist/
+results/
+venv/
+
+# Editor specific
+.ropeproject/
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# Packaging
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
