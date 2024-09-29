@@ -6,8 +6,8 @@ dotenv_path = os.path.join(os.path.dirname(__file__), ".env")
 if os.path.exists(dotenv_path):
     load_dotenv(dotenv_path)
 
-app = create_app("development")
-
+# Use FLASK_ENV if set, otherwise default to 'development'
+app = create_app(os.getenv('FLASK_ENV', 'development'))
 
 @app.cli.command()
 def test():
@@ -19,7 +19,6 @@ def test():
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.errors or result.failures:
         sys.exit(1)
-
 
 @app.cli.command()
 def fill_db():
