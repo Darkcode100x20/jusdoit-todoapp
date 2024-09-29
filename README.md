@@ -30,6 +30,19 @@ Usando `docker-compose` puedes correr la app, con los siguientes comandos de Doc
     docker-compose build
     docker-compose up
 
+1) Build the Docker Images: Use this command to build the Docker images specified in your docker-compose.yml file. This step is useful if you want to ensure that all your images are built before running them, especially if you've made changes to your Dockerfiles or need to incorporate new dependencies.
+
+   docker compose build
+2) Rebuild and Restart the Services: If you want to make sure that any changes are picked up and the images are rebuilt (if necessary) before starting the containers, use the following command:
+   docker compose up --build
+3) Check the Running Containers: After your services are up and running, you can check the status of the containers by using:
+   docker compose up --build
+4) Docker Compose Logs: If the problem persists, inspect the logs more closely right after you start the services:
+   docker compose logs
+Manual Check Inside Container: If possible, you can also try to manually check inside the container to see if the files are where they're supposed to be. Use:
+   docker compose run web ls /app
+
+
 La aplicacion correra en http://localhost:8000/
 
 (La app se sirve usando [gunicorn](http://gunicorn.org/) el cual se usa para el despliegue en vez de correr `flask run`.)
