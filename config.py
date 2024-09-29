@@ -2,10 +2,9 @@ import os
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
 
-
 def create_sqlite_uri(db_name):
-    return "sqlite:///" + os.path.join(BASEDIR, db_name)
-
+    # Cambiamos la ubicación de la base de datos al directorio /data
+    return "sqlite:////data/" + db_name
 
 class Config:
     SECRET_KEY = os.environ.get("SECRET_KEY") or "secret key, just for testing"
@@ -17,11 +16,9 @@ class Config:
     def init_app(app):
         pass
 
-
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = create_sqlite_uri("todolist-dev.db")
-
 
 class TestingConfig(Config):
     TESTING = True
@@ -32,10 +29,8 @@ class TestingConfig(Config):
     logging.basicConfig(format="%(asctime)s:%(levelname)s:%(name)s:%(message)s")
     logging.getLogger().setLevel(logging.DEBUG)
 
-
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = create_sqlite_uri("todolist.db")
-
 
 config = {
     "development": DevelopmentConfig,

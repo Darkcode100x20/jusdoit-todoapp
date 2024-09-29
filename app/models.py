@@ -6,7 +6,7 @@ from flask_login import UserMixin
 from sqlalchemy.orm import synonym
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from app import db, login_manager
+from . import db, login_manager
 
 EMAIL_REGEX = re.compile(r"^\S+@\S+\.\S+$")
 USERNAME_REGEX = re.compile(r"^\S+$")
