@@ -1,9 +1,10 @@
+version: '3'
 services:
   web:
     build: .
     env_file:
       - .env  # Para cargar variables de entorno desde el archivo .env
     ports:
-      - "8000:5000"
+      - "8000:8000"
     volumes:
       - .:/app

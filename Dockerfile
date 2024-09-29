@@ -1,5 +1,5 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9-slim
+# Use Python 3.11 instead of 3.9
+FROM python:3.11-slim
 
 # Set the working directory in the container
 WORKDIR /app
@@ -17,4 +17,5 @@ EXPOSE 8000
 ENV PYTHONUNBUFFERED=1
 
 # Run app.py when the container launches
-CMD ["python", "app.py"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=8000"]
+
