@@ -27,8 +27,8 @@ https://github.com/rtzll/django-todolist
 ### Docker
 Usando `docker-compose` puedes correr la app, con los siguientes comandos de Docker:
 
-    docker-compose build
-    docker-compose up
+    docker compose build
+    docker compose up
 
 1) Build the Docker Images: Use this command to build the Docker images specified in your docker-compose.yml file. This step is useful if you want to ensure that all your images are built before running them, especially if you've made changes to your Dockerfiles or need to incorporate new dependencies.
 
